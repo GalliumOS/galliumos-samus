@@ -1,0 +1,35 @@
+#!/bin/sh
+#
+# Attempt to reset Atmel maXTouch Touchpad and Touchscreen
+#
+
+modprobe i2c-dev
+
+## Touchpad is usually at i2c device 0 or 7, but try them all if necessary
+TRY_IDS="7 0 1 2 3 4 5 6 8 9 10 11 12 13 14 15"
+tp_id=
+
+for n in $TRY_IDS; do
+  sudo mxt-app -i -d i2c-dev:$n-004a > /dev/null 2>&1
+  if [ "$?" -eq 0 ]; then
+    tp_id=$n
+    break
+  fi
+done
+
+if [ -z "$tp_id" ]; then
+  echo "Touchpad NOT FOUND on i2c bus!"
+else
+  echo "Touchpad found on i2c bus at id $tp_id"
+  echo "Resetting."
+  sudo mxt-app -d i2c-dev:$tp_id-004a -W -T18 44
+  sudo mxt-app -d i2c-dev:$tp_id-004a --backup
+  sudo mxt-app -d i2c-dev:$((tp_id+1))-004b -W -T18 44
+  sudo mxt-app -d i2c-dev:$((tp_id+1))-004b --backup
+fi
+
+#Atmel maXTouch Touchpad as /devices/pci0000:00/INT3432:00/i2c-7/i2c-ATML0000:01/input/input11
+# cat /sys/devices/pci0000:00/INT3432:00/i2c-7/i2c-ATML0000:01/input/input11/name
+# Atmel maXTouch Touchpad
+# cat /sys/devices/pci0000:00/INT3433:00/i2c-8/i2c-ATML0001:01/input/input8/name
+# Atmel maXTouch Touchscreen

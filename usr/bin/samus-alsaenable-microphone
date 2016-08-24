@@ -1,0 +1,26 @@
+#!/bin/sh
+#
+
+## enable internal microphone
+
+# (alsamixer) Capture / Mic =  89<>89
+amixer -c 0 cset name='Mic Capture Volume' 29,29
+
+# (alsamixer) Capture / ADC1 = 10<>10
+amixer -c 0 cset name='ADC1 Capture Volume' 14,14
+
+# (alsamixer) Capture / STO1 ADC Boost
+
+amixer -c 0 cset name='STO1 ADC Boost Volume' 3,3
+amixer -c 0 cset name='ADC1 Capture Switch' on
+
+amixer -c 0 cset name='Sto1 ADC MIXL ADC1 Switch' off
+amixer -c 0 cset name='Sto1 ADC MIXR ADC1 Switch' off
+amixer -c 0 cset name='Headset Mic Switch' off
+
+amixer -c 0 cset name='IF1 ADC1 Swap Mux' L/R
+
+amixer -c 0 cset name='Sto1 ADC MIXL ADC2 Switch' on
+amixer -c 0 cset name='Sto1 ADC MIXR ADC2 Switch' on
+amixer -c 0 cset name='Local DMICs Switch' on
+

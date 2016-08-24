@@ -1,0 +1,12 @@
+galliumos-samus (0.1) xenon; urgency=medium
+
+  * Configuration and utilities for SAMUS
+    - ALSA config and tmp convenience scripts
+      - internal speakers
+      - internal microphone
+      - headphones
+      - exernal microphone (TODO)
+    - HiDPI desktop config
+    - Script to reset Atmel touchpad/touchscreen (WIP)
+
+ -- reynhout <reynhout@galliumos.org>  Sun, 21 Aug 2016 20:23:16 -0600

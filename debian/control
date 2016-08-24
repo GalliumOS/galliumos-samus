@@ -1,0 +1,15 @@
+Source: galliumos-samus
+Section: admin
+Priority: required
+Maintainer: reynhout <reynhout@galliumos.org>
+XSBC-Original-Maintainer: reynhout <reynhout@galliumos.org>
+Standards-Version: 3.9.1
+
+Package: galliumos-samus
+Architecture: all
+Priority: required
+Depends: galliumos-base, galliumos-broadwell
+Provides: galliumos-device
+Replaces: galliumos-broadwell, pulseaudio, galliumos-default-settings
+Description: GalliumOS customizations for SAMUS
+ This package contains SAMUS-specific files for GalliumOS
