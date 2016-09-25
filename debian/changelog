@@ -1,3 +1,9 @@
+galliumos-samus (0.2) xenon; urgency=medium
+
+  * Fix malformed xfwm4.xml
+
+ -- reynhout <reynhout@galliumos.org>  Sun, 25 Sep 2016 21:18:03 +0000
+
 galliumos-samus (0.1) xenon; urgency=medium
 
   * Configuration and utilities for SAMUS
