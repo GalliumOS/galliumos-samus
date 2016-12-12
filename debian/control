@@ -8,8 +8,8 @@ Standards-Version: 3.9.1
 Package: galliumos-samus
 Architecture: all
 Priority: required
-Depends: galliumos-base, galliumos-broadwell
+Depends: galliumos-base, galliumos-broadwell, galliumos-hidpi
 Provides: galliumos-device
-Replaces: galliumos-broadwell, pulseaudio, galliumos-default-settings
+Replaces: galliumos-broadwell, pulseaudio
 Description: GalliumOS customizations for SAMUS
  This package contains SAMUS-specific files for GalliumOS
