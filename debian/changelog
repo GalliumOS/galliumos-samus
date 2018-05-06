@@ -1,3 +1,9 @@
+galliumos-samus (2.9901) bismuth; urgency=medium
+
+  * Prepare for GalliumOS 3.0
+
+ -- reynhout <reynhout@galliumos.org>  Sun, 06 May 2018 07:04:41 +0000
+
 galliumos-samus (0.3) xenon; urgency=medium
 
   * Separate HiDPI config out into new galliumos-hidpi pkg
